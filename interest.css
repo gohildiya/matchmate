@@ -1,0 +1,103 @@
+
+.custom-card {
+    box-shadow: 0 0 10px rgba(56, 168, 55, 0.952);
+}
+
+h3{
+    text-decoration: none;
+    font-family: kalam;
+    text-shadow: 1px 1px 1px rgb(139, 229, 5);
+}
+
+h4{
+    font-weight: bold;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button-checkbox {
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(9, 9, 9);
+    border: 2px solid #474444;
+    border-radius: 40px 40px 40px 40px;
+    transition: background-color 0.2s;
+    margin-bottom: 6px;
+    margin: 6px 6px 6px 6px;
+}
+ .custom-checkbox input[type="checkbox"]:checked+.button-checkbox {
+    background-color:rgb(2, 190, 55);
+    color: #fff;
+    border: 1px solid rgb(1, 110, 41);
+    transition: background-color 0.2s;
+   
+}
+
+.input{
+    color: #fff;
+    background-color:rgb(2, 190, 55);
+    border-radius: 40px 40px 40px 40px;
+    padding: 10px 20px;
+    border: 2px solid #cccccc;
+    margin-bottom: 6px;
+    margin: 6px 6px 6px 6px;
+}
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        z-index: 1;
+        position: absolute;
+        bottom: 30px;
+        width: 30px; /* Adjust button size */
+        height: 30px; /* Adjust button size */
+        border-radius: 70%; /* Make buttons round */
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust button background color */
+        color: white; /* Adjust button text color */
+        border: none;
+    }
+
+    .carousel-control-prev {
+        left: 10px;
+    }
+
+    .carousel-control-next {
+        right: 10px;    
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        color: #fff; /* Change to the desired color */
+        background-color: #00ff4cb2; /* Change to the desired background color */
+        border-color: #11f551a3; /* Change to the desired border color */
+        top: 50%; /* Position the buttons vertically centered */
+        transform: translateY(-50%);
+        width: 15px; /* Set fixed width for stability */
+        height: 15px; /* Set fixed height for stability */
+        font-size: 15px; /* Adjust font size as needed */
+    }
+
+    /* Custom CSS to change hover color for prev and next buttons */
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        color: #fff; /* Change to the desired hover color */
+        background-color: #6ef564; /* Change to the desired hover background color */
+        border-color: #6ef564; /* Change to the desired hover border color */
+    }
+
+    /* Adjust position of previous button */
+    .carousel-control-prev {
+        left: 10px; /* Set fixed left position */
+    }
+
+    /* Adjust position of next button */
+    .carousel-control-next {
+        right: 10px; /* Set fixed right position */
+    }

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*,
+*:after,
+*:before{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.img{
+   width: 20px;
+}
+
+:active,
+:hover,
+:focus{
+    outline: 0 !important;
+    outline-offset: 0;
+}
+
+a,
+a:hover{
+    text-decoration: none;
+}
+a :hover{
+    color: var(--primary-color) !important;
+}
+
+ul,
+ol{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color:red;
+    --secondary-color:#431214;
+    --third-color:#f98169;
+    --white-color:white;
+    --text-color:#555;
+    --text-gray:#999;
+    --black-color:black;
+    --primary-font:'Roboto', sans-serif;
+    --secondary-font:'Quicksand',sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    /* background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    font-size: 100%;
+    font-family: var(--primary-font);
+    font-weight: 380;
+}
+
+/* Custom scrollbar = scrollbar in div */
+::-webkit-scrollbar{
+    width: 0.625rem;
+}
+::-webkit-scrollbar-track{
+    background: var(--white-color);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+}
+
+
+/* custom css design */
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+}
+
+h2{
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-family: var(--secondary-color);
+    line-height: 3rem;
+
+}
+h4{
+    color: var(--secondary-color);
+    font-family: var(--secondary-color);
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+h5{
+    color: var(--primary-color);
+    font-family: var(--secondary-color);
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+p{
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: 1px;
+}
+
+.logo{
+    border-radius: 40%;
+}
+/* header design  */
+.navigation-wrap{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.navigation-wrap .nav-item{
+    padding: 0 0.625rem;
+    transition: all 200ms linear;
+}
+
+.navbar-toggler :focus{
+    outline: unset;
+    border: unset;
+    box-shadow: none;
+}
+
+
+.top-banner{
+    width: 100%;
+    background: url() no-repeat center;
+    background-size: cover;
+    padding: 16.876rem 0 9.375rem;
+}
+
+
+.wrapper .otp_input input{
+    width: 14%;
+    height: 50px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+}

@@ -1,0 +1,93 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  a {
+    color: #f6f9fc;
+    text-decoration: none;
+  }
+  
+  .hero-section {
+    background-image: url('img/R.jpeg');
+    background-size: cover;
+    height: 500px;
+    color: #f9e6d0;
+    text-shadow: 1px 1px 3px rgba(26, 24, 24, 0.5); /* Enhance text readability on image */
+  }
+  
+  /* Navigation styles */
+  .navbar {
+    border-bottom: 1px solid #ccc;
+  }
+  .navbar nav{
+    font-size: larger;
+  }
+  .navbar-brand {
+    font-weight: bold;
+  }
+  .navbar-brand img {
+    margin-right: 10px; /* Adjust spacing as needed */
+    width: 100px; /* Adjust logo size as needed */
+  }
+  .joinnow {
+    /* Button styling */
+    background-color: #007bff; /* Primary blue color */
+    border-color: #007bff;
+    color: #fff; /* White text */
+    font-weight: normal; /* Bold text */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Adjust padding as needed */
+  
+    /* Optional hover effect */
+    &:hover {
+      background-color: #0069d9; /* Slightly darker blue on hover */
+      border-color: #0069d9;
+    }
+  }
+  
+  /* Alignment for smaller screens (optional) */
+  @media (max-width: 768px) {
+    .ms-auto {
+      margin-left: 20vh; /* Push button to the right */
+    }
+  }
+  
+  /* Section styles */
+  section {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  h2 {
+    color: #337ab7;
+  }
+  
+  .feature-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .feature-card i {
+    font-size: 48px;
+    color: #337ab7;
+  }
+  
+  /* Call to action button styles */
+  .btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+  }
+  
+  .btn-primary:hover {
+    background-color: #286090;
+    border-color: #286090;
+  }
+
+  .footer1{
+    background: cover;
+  }
+  

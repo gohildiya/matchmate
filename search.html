@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from preclinic.dreamstechnologies.com/html/template/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Apr 2024 16:26:16 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.png"
+    />
+    <title>Match Mate</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+
+    <link rel="stylesheet" href="assets/css/feather.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet"  type="text/css" href="search.css"/>
+
+    
+  </head>
+ 
+  <body>
+    
+    <div class="main-wrapper slide-nav">
+
+        <!--header start-->
+      <div class="header">
+        <div class="header-left">
+          <a href="#" class="logo">
+            <img src="img/logo3.jpg" width="65" height="65" alt />
+            <span>MatchMate</span>
+          </a>
+        </div>
+        <a id="toggle_btn" href="javascript:void(0);"
+          ><img src="assets/img/icons/bar-icon.svg" alt
+        /></a>
+        <a id="mobile_btn" class="mobile_btn float-start" href="#sidebar"
+          ><img src="assets/img/icons/bar-icon.svg" alt
+        /></a>
+      </div>
+        <!--header End-->
+
+
+        <!--Start sidebar-->
+      <div class="sidebar open" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+        <ul>
+        <li class="submenu">
+        <a href="home.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-01.svg" alt></span> <span> Home </span> <span class="menu-arrow"></span></a>
+        <a href="search.html"><span class="menu-side"><img src="assets/img/icons/search-normal.svg" alt></span> <span> Search </span> <span class="menu-arrow"></span></a>
+        <a href="message.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-10.svg" alt></span> <span> Message</span> <span class="menu-arrow"></span></a>
+        <a href="myprofile.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-13.svg" alt></span> <span> My Profile </span> <span class="menu-arrow"></span></a>
+        <a href="contactus.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-11.svg" alt></span> <span> Contact Us </span> <span class="menu-arrow"></span></a>
+        </li>
+        <li class="submenu">
+            <a href="setting.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-16.svg" alt></span> <span> Setting</span> <span class="menu-arrow"></span></a>
+            <ul style="display: none;">
+            <li><a href="edit_profile.html">Edit Profile</a></li>
+            </ul>
+            </li>
+        
+        <div class="logout-btn">
+            <a href="login.html"><span class="menu-side"><img src="assets/img/icons/logout.svg" alt></span> <span>Logout</span></a>
+        </div>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <!--End sidebar-->
+        
+       
+  <!--start search-->
+  <div class="page-wrapper">
+    <div class="content">
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+            <button id="searchButton" class="search-button"><i class="fa fa-search"></i></button>
+        </div>
+        <div id="searchResults" class="search-results">
+            <!-- Search results will be displayed here -->
+        </div>
+        
+</div>
+</div>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    let lastSearchQuery = ''; // Variable to store the last search query
+
+
+
+    const users = [
+            {
+              profilePhoto:"https://picsum.photos/150/150?photo=14",
+              userName:"john deo",
+            },
+            {
+              profilePhoto:"https://picsum.photos/150/150?photo=12",
+              userName:"Kartik_Solanki",
+            },
+            {
+              profilePhoto:"https://picsum.photos/150/150?photo=11",
+              userName:"gohil_diya_58",
+            },
+            {
+              profilePhoto:"https://picsum.photos/150/150?photo=2",
+              userName:"jilu_111",
+            },
+            {
+              profilePhoto:"https://picsum.photos/150/150?photo=7",
+              userName:"yash_raiyani",
+            },
+            {
+              profilePhoto:"https://picsum.photos/150/150?photo=6",
+              userName:"patel_nihal",
+            },
+            {
+              profilePhoto:"https://picsum.photos/150/150?photo=1",
+              userName:"h_jasoliya",
+            },
+            // Add more countries as needed
+        ];
+        function displaySearchResults(query) {
+        const filteredUsers = users.filter(user => user.userName.toLowerCase().includes(query.toLowerCase()) && !user.followed);
+        searchResults.innerHTML = '';
+        filteredUsers.forEach(user => {
+            const buttonText = user.followed ? 'Followed' : 'Follow';
+            const profileHTML = `
+                <div class="user-profile" data-userName="${user.userName}">
+                    <img src="${user.profilePhoto}" alt="${user.userName}">
+                    <h3>${user.userName}</h3>
+                    <button class="follow-button" data-userName="${user.userName}" ${user.followed ? 'disabled' : ''}>${buttonText}</button>
+                    <button class="cancel-button" data-userName="${user.userName}">Cancel</button>
+                </div>
+            `;
+            searchResults.innerHTML += profileHTML;
+        });
+        lastSearchQuery = query; // Update the last search query
+    }
+
+    function followUser(userName, button) {
+    // Perform follow action here (e.g., send request to server)
+    // Simulating follow action by updating the 'followed' property
+    const user = users.find(user => user.userName === userName);
+    if (user) {
+        user.followed = true;
+        button.innerText = 'Followed';
+        button.disabled = true;
+        alert(`You are now following ${userName}!`);
+    }
+}
+
+    function cancelFollow(userName) {
+        // Perform cancel follow action here (e.g., send request to server)
+        // Simulating cancel follow action by updating the 'followed' property
+        const userIndex = users.findIndex(user => user.userName === userName);
+        if (userIndex !== -1) {
+            users[userIndex].followed = false;
+            const canceledUserElement = document.querySelector(`.user-profile[data-userName="${userName}"]`);
+            if (canceledUserElement) {
+                canceledUserElement.remove();
+                alert(`You have canceled following ${userName}.`);
+            }
+        }
+    }
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm !== '') {
+            displaySearchResults(searchTerm);
+        } else if (lastSearchQuery !== '') { // Display last search results if search input is cleared
+            displaySearchResults(lastSearchQuery);
+        }
+    });
+
+    // Event delegation for follow button click
+    searchResults.addEventListener('click', function(event) {
+        if (event.target.classList.contains('follow-button')) {
+            const userName = event.target.getAttribute('data-userName');
+            followUser(userName, event.target);
+        } else if (event.target.classList.contains('cancel-button')) {
+            const userName = event.target.getAttribute('data-userName');
+            cancelFollow(userName);
+        }
+    });
+});
+</script>
+    <!--end search-->
+
+
+    <div class="sidebar-overlay" data-reff></div>
+</div>
+  </body>
+</html>

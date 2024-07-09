@@ -1,0 +1,73 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.search-button {
+    width: 60px;
+    height: 45px;
+    background-color: #213449;
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.search-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.user-profile {
+    position: relative; /* Make the container position relative */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    display: inline-block; /* Display the profile photo inline */
+}
+
+.user-profile h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: inline-block; /* Display the username inline */
+    margin-left: 10px; /* Add some space between photo and username */
+}
+
+.user-profile p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+    .follow-button,
+    .cancel-button {
+        padding: 5px 10px; /* Add padding to the button */
+        background-color: #21476f;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .cancel-button {
+        margin-left: 5px; /* Add margin between buttons */
+    }

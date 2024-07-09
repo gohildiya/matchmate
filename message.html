@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <title>Match Mate</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/feather.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="message.css"/>
+</head>
+
+<body>
+    <div class="main-wrapper slide-nav">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <a href="#" class="logo">
+                    <img src="img/logo3.jpg" width="65" height="65" alt />
+                    <span>MatchMate</span>
+                </a>
+            </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar open" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="submenu">
+                            <a href="home.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-01.svg" alt></span> <span> Home </span> <span class="menu-arrow"></span></a>
+                            <a href="search.html"><span class="menu-side"><img src="assets/img/icons/search-normal.svg" alt></span> <span> Search </span> <span class="menu-arrow"></span></a>
+                            <a href="message.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-10.svg" alt></span> <span> Message</span> <span class="menu-arrow"></span></a>
+                            <a href="myprofile.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-13.svg" alt></span> <span> My Profile </span> <span class="menu-arrow"></span></a>
+                            <a href="contactus.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-11.svg" alt></span> <span> Contact Us </span> <span class="menu-arrow"></span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="setting.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-16.svg" alt></span> <span> Setting</span> <span class="menu-arrow"></span></a>
+                            <ul style="display: none;">
+                                <li><a href="edit_profile.html">Edit Profile</a></li>
+                            </ul>
+                        </li>
+                        <div class="logout-btn">
+                            <a href="login.html"><span class="menu-side"><img src="assets/img/icons/logout.svg" alt></span> <span>Logout</span></a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chat Container -->
+        <div class="page-wrapper">
+            <div class="chat-container">
+                <div class="profile-list">
+                    <h2>Profiles</h2>
+                    <ul id="profileList">
+                        <!-- Profiles will be dynamically added here -->
+                    </ul>
+                </div>
+                <div class="chat-box">
+                    <h2>Chat</h2>
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Chat messages will be displayed here -->
+                    </div>
+                    <div class="message">
+                        <input type="text" id="messageInput" placeholder="Type a message" data-profile="">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-overlay" data-reff></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = sessionStorage.getItem('username');
+
+            // Display logged-in username
+            const loggedInUserElement = document.createElement('span');
+            loggedInUserElement.textContent = `Logged in as: ${username}`;
+            document.body.appendChild(loggedInUserElement);
+
+            // Dummy profiles (replace with actual dynamic data)
+            const profiles = [
+                { name: 'jilu.73' },
+                { name: 'Profile 2' },
+                { name: 'Profile 3' },
+                { name: 'Profile 4' },
+                { name: 'Profile 5' }
+            ];
+
+            displayProfiles(profiles);
+        });
+
+        function displayProfiles(profiles) {
+            const profileList = document.getElementById('profileList');
+            profileList.innerHTML = '';
+
+            profiles.forEach(profile => {
+                const listItem = document.createElement('li');
+                listItem.textContent = profile.name;
+                listItem.classList.add('profile-item');
+
+                listItem.addEventListener('click', () => {
+                    const messageInput = document.getElementById('messageInput');
+                    messageInput.setAttribute('data-profile', profile.name);
+                    messageInput.placeholder = `Type a message to ${profile.name}`;
+                    loadChat(profile.name);
+                });
+
+                profileList.appendChild(listItem);
+            });
+        }
+
+        function loadChat(profileName) {
+            const chatMessagesContainer = document.getElementById('chatMessages');
+            chatMessagesContainer.innerHTML = '';
+
+            // Retrieve messages for the selected profile (simulate message retrieval)
+            const messages = getMessagesForProfile(profileName);
+
+            messages.forEach(message => {
+                const messageElement = createMessageElement(message.sender, message.message);
+                chatMessagesContainer.appendChild(messageElement);
+            });
+        }
+
+        function getMessagesForProfile(profileName) {
+            // Simulate message retrieval for the selected profile (replace with actual logic)
+            const messages = JSON.parse(localStorage.getItem(profileName)) || [];
+            return messages;
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const messageText = messageInput.value.trim();
+            const recipientProfile = messageInput.dataset.profile;
+
+            if (messageText && recipientProfile) {
+                const senderUsername = sessionStorage.getItem('username');
+
+                const message = { sender: senderUsername, message: messageText };
+                saveMessageToProfile(message, recipientProfile);
+
+                const chatMessagesContainer = document.getElementById('chatMessages');
+                const messageElement = createMessageElement(senderUsername, messageText);
+                chatMessagesContainer.appendChild(messageElement);
+
+                messageInput.value = ''; // Clear input after sending message
+            }
+        }
+
+        function saveMessageToProfile(message, recipientProfile) {
+            // Save message to the recipient's profile (simulate storage)
+            const messages = JSON.parse(localStorage.getItem(recipientProfile)) || [];
+            messages.push(message);
+            localStorage.setItem(recipientProfile, JSON.stringify(messages));
+        }
+
+        function createMessageElement(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            if (sender === sessionStorage.getItem('username')) {
+                messageElement.classList.add('sent');
+                sender = 'You';
+            } else {
+                messageElement.classList.add('received');
+            }
+            messageElement.textContent = `${sender}: ${message}`;
+            return messageElement;
+        }
+    </script>
+</body>
+</html>

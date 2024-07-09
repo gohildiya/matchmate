@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from preclinic.dreamstechnologies.com/html/template/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Apr 2024 16:26:16 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.png"
+    />
+    <title>Match Mate</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/fontawesome/css/fontawesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css" />
+
+    <link rel="stylesheet" href="assets/css/feather.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet"  type="text/css" href="home.css"/>
+  </head>
+ 
+  <body>
+    
+    <div class="main-wrapper slide-nav">
+
+        <!--header start-->
+      <div class="header">
+        <div class="header-left">
+          <a href="#" class="logo">
+            <img src="img/logo3.jpg" width="65" height="65" alt />
+            <span>MatchMate</span>
+          </a>
+        </div>
+        <a id="toggle_btn" href="javascript:void(0);"
+          ><img src="assets/img/icons/bar-icon.svg" alt
+        /></a>
+        <a id="mobile_btn" class="mobile_btn float-start" href="#sidebar"
+          ><img src="assets/img/icons/bar-icon.svg" alt
+        /></a>
+      </div>
+        <!--header End-->
+
+
+        <!--Start sidebar-->
+      <div class="sidebar open" id="sidebar">
+        <div class="sidebar-inner slimscroll">
+        <div id="sidebar-menu" class="sidebar-menu">
+        <ul>
+        <li class="submenu">
+        <a href="home.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-01.svg" alt></span> <span> Home </span> <span class="menu-arrow"></span></a>
+        <a href="search.html"><span class="menu-side"><img src="assets/img/icons/search-normal.svg" alt></span> <span> Search </span> <span class="menu-arrow"></span></a>
+        <a href="message.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-10.svg" alt></span> <span> Message</span> <span class="menu-arrow"></span></a>
+        <a href="myprofile.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-13.svg" alt></span> <span> My Profile </span> <span class="menu-arrow"></span></a>
+        <a href="contactus.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-11.svg" alt></span> <span> Contact Us </span> <span class="menu-arrow"></span></a>
+        </li>
+        <li class="submenu">
+            <a href="setting.html"><span class="menu-side"><img src="assets/img/icons/menu-icon-16.svg" alt></span> <span> Setting</span> <span class="menu-arrow"></span></a>
+            <ul style="display: none;">
+            <li><a href="edit_profile.html">Edit Profile</a></li>
+            </ul>
+            </li>
+        
+        <div class="logout-btn">
+            <a href="login.html"><span class="menu-side"><img src="assets/img/icons/logout.svg" alt></span> <span>Logout</span></a>
+        </div>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <!--End sidebar-->
+        
+        <!--start body-->
+       <!-- <div class="page-wrapper">
+        <div class="content">
+        <h1>Friend Requests</h1>
+	<ul id="friend-requests">
+        <div class="row">
+            <div class="col-12 col-lg-3 col-md-4 col-sm-6">
+                <div class="card">
+<div class="card-header">
+    <img src="https://picsum.photos/250/250" alt="Friend Request" class="friend-request-img">                 
+    <p class="friend-request-name">John Doe</p>
+</div>
+<div class="card-body">
+    <img src="https://picsum.photos/300/300" alt="Sample Image" style="width: 100%; height: auto;">
+</div>
+<div class="card-footer">
+    <button class="btn btn-success"><i class="fas fa-check"></i> Confirm</button>
+    <button class="btn btn-danger"><i class="fas fa-times"></i> Delete</button>
+</div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+		
+	</ul>
+	
+	<script src="home.js"></script>-->
+  
+  <div class="page-wrapper">
+    <div class="content">
+  <div class="container">
+    <div class="row mt-2" id="output">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+      
+        const requests = [
+            {
+              profilePhoto:"https://picsum.photos/250/250?photo=14",
+              userName:"john deo",
+              postPhoto:"https://picsum.photos/300/300?photo=13"
+            },
+            {
+              profilePhoto:"https://picsum.photos/250/250?photo=12",
+              userName:"Kartik_Solanki",
+              postPhoto:"https://picsum.photos/300/300?photo=10"
+            },
+            {
+              profilePhoto:"https://picsum.photos/250/250?photo=11",
+              userName:"gohil_diya_58",
+              postPhoto:"https://picsum.photos/300/300?photo=4"
+            },
+            {
+              profilePhoto:"https://picsum.photos/250/250?photo=2",
+              userName:"jilu_111",
+              postPhoto:"https://picsum.photos/300/300?photo=9"
+            },
+            {
+              profilePhoto:"https://picsum.photos/250/250?photo=7",
+              userName:"yash_raiyani",
+              postPhoto:"https://picsum.photos/300/300?photo=8"
+            },
+            {
+              profilePhoto:"https://picsum.photos/250/250?photo=6",
+              userName:"patel_nihal",
+              postPhoto:"https://picsum.photos/300/300?photo=5"
+            },
+            {
+              profilePhoto:"https://picsum.photos/250/250?photo=1",
+              userName:"h_jasoliya",
+              postPhoto:"https://picsum.photos/300/300?photo=3"
+            },
+            // Add more countries as needed
+        ];
+
+        console.log(requests);
+        
+        requests.map(function(item){
+            //object destructring
+            let {profilePhoto:photo,userName:name,postPhoto:photos} = item;
+            let design =  ` <div class="col-lg-3 co-md-4 col-sm-6 col-12 mb-3">
+            <div class="card shadow">
+             
+              <div class="card-header">
+                <img src=${photo} alt="Friend Request" class="friend-request-img">                 
+                <p class="friend-request-name">${name}</p>
+              </div>
+                
+                <div class="card-body">
+                    <img src=${photos} alt="Sample Image" style="width: 100%; height: auto;">
+                </div>    
+                    <div class="card-footer">
+                        <button class="btn btn-success"><i class="fas fa-check"></i> Confirm</button>
+                        <button class="btn btn-danger"><i class="fas fa-times"></i> Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+            document.getElementById('output').innerHTML += design;
+        })
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const confirmButtons = document.querySelectorAll('.btn-success');
+    const deleteButtons = document.querySelectorAll('.btn-danger');
+
+    confirmButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Get the name of the user
+            const userName = this.closest('.card').querySelector('.friend-request-name').innerText;
+            // Display confirmation popup
+            if (confirm(`Confirm request from ${userName}?`)) {
+                // Hide the Confirm button
+                this.style.display = 'none';
+                // Show the Delete button
+                this.closest('.card-footer').querySelector('.btn-danger').style.display = 'inline-block';
+                alert(`Request from ${userName} confirmed.`);
+            }
+        });
+    });
+
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            // Get the name of the user
+            const userName = this.closest('.card').querySelector('.friend-request-name').innerText;
+            // Display deletion popup
+            if (confirm(`Delete request from ${userName}?`)) {
+                // Remove the card from the DOM
+                this.closest('.col-lg-3').remove();
+                alert(`Request from ${userName} deleted.`);
+            }
+        });
+    });
+});
+
+
+    </script>
+
+    </div>
+</div>
+</div>
+    
+    <div class="sidebar-overlay" data-reff></div>
+</div>
+  </body>
+</html>
